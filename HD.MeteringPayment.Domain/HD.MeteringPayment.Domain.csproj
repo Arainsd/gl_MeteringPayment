@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9FAD082-F4B6-4433-A1D6-CE8D43661598}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HD.MeteringPayment.Domain</RootNamespace>
+    <AssemblyName>HD.MeteringPayment.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CCStudio|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CCStudio\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Erp.CommonData, Version=1.0.0.11, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Erp.CommonData.1.0.0.11\lib\net40\Erp.CommonData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Erp.GpPlatformService.Interface, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Erp.GpPlatformService.Interface.1.0.0.3\lib\net40\Erp.GpPlatformService.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Erp.GpServiceClient, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Erp.GpServiceClient.1.0.0.4\lib\net40\Erp.GpServiceClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hondee.Common, Version=1.0.1.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hondee.Common.1.0.1.7\lib\net40\Hondee.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\MeteringPaymentClient.cs" />
+    <Compile Include="Entity\BaseInfoEntity\IGlUsers.cs" />
+    <Compile Include="Entity\BaseInfoEntity\IProjectBid.cs" />
+    <Compile Include="Entity\BaseInfoEntity\IManager.cs" />
+    <Compile Include="Entity\BaseInfoEntity\IProjectInfo.cs" />
+    <Compile Include="Entity\BaseInfoEntity\ProjectBid.cs" />
+    <Compile Include="Entity\BaseInfoEntity\Manager.cs" />
+    <Compile Include="Entity\BaseInfoEntity\ProjectBid.Db.cs" />
+    <Compile Include="Entity\BaseInfoEntity\Manager.Db.cs" />
+    <Compile Include="Entity\BaseInfoEntity\ProjectInfo.cs" />
+    <Compile Include="Entity\BaseInfoEntity\ProjectInfo.Db.cs" />
+    <Compile Include="Entity\ContractBoqEntity\IContractBoq.cs" />
+    <Compile Include="Entity\ContractBoqEntity\IContractBoqChange.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoi.Db.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoi.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoq.Db.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoq.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoqChange.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoqChange.Db.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoqChangeDetail.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoqChangeDetail.Db.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoqChangeInfo.cs" />
+    <Compile Include="Entity\ContractBoqEntity\ContractBoqChangeLog.cs" />
+    <Compile Include="Entity\ContractEntity\Contract.cs" />
+    <Compile Include="Entity\ContractEntity\ContractEntity.Db.cs" />
+    <Compile Include="Entity\ContractEntity\IContract.cs" />
+    <Compile Include="Entity\ProgressMeteringEntity\PrjAmount.Db.cs" />
+    <Compile Include="Entity\ProgressMeteringEntity\PrjAmount.cs" />
+    <Compile Include="Entity\ProgressMeteringEntity\IPrjAmount.cs" />
+    <Compile Include="Entity\ProgressMeteringEntity\PrjAmountDetail.cs" />
+    <Compile Include="Entity\ProgressMeteringEntity\PrjAmountDetail.Db.cs" />
+    <Compile Include="Entity\ProgressMeteringEntity\PrjAmountOhter.cs" />
+    <Compile Include="Entity\ProgressMeteringEntity\PrjAmountOhter.Db.cs" />
+    <Compile Include="Entity\ProgressMeteringRptEntity\IPrjAmountRpt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountRpt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountRpt.Db.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountPayRpt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountPayRpt.Db.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountBoiRpt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountBoiRpt.Db.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountWbsBoiRpt.cs" />
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountWbsBoiRpt.Db.cs" />
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountWbsRpt.cs" />
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountWbsRpt.Db.cs" />
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountWbsRptDetail.cs" />
+    <Compile Include="Entity\ProgressMeteringRptEntity\PrjAmountWbsRptDetail.Db.cs" />
+    <Compile Include="Entity\WBSBoqEntity\WBSline_boi.cs" />
+    <Compile Include="Entity\WBSBoqEntity\WBSline_boi.Db.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\CtrctAgreement.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\CtrctAgreement.Db.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\ICtrctAgreement.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\IXMBContractInfo.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\XMBContractInfo.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\XMBContractInfo.Db.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\XMBProjectInfoEntity\IXMBProjectInfo.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\XMBProjectInfoEntity\XMBProjectInfo.cs" />
+    <Compile Include="Entity\XMBContractInfoEntity\XMBProjectInfoEntity\XMBProjectInfo.Db.cs" />
+    <Compile Include="Entity\WBSBoqEntity\WBSline.cs" />
+    <Compile Include="Entity\WBSBoqEntity\WBSline.Db.cs" />
+    <Compile Include="Entity\WBSBoqEntity\WBSBoq.cs" />
+    <Compile Include="Entity\WBSBoqEntity\WBSBoq.Db.cs" />
+    <Compile Include="Entity\WBSBoqEntity\IWBSBoq.cs" />
+    <Compile Include="EnumEntity\PrjamountShowStat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

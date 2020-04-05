@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Erp.GpPlatformService.ExportService" CodeBehind="ExportService.svc.cs" %>

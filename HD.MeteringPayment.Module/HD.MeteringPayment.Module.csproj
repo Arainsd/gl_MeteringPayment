@@ -1,0 +1,838 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{093110E9-4141-4C4D-92E8-86E92864892B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HD.MeteringPayment.Module</RootNamespace>
+    <AssemblyName>HD.MeteringPayment.Module</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CCStudio|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\CCStudio\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Images.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.2.UI, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2.UI, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2.Wizard, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Erp.CommonData, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Erp.CommonData.1.0.0.22\lib\net40\Erp.CommonData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Erp.GpPlatformService.Interface, Version=1.0.0.17, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Erp.GpPlatformService.Interface.1.0.0.17\lib\net40\Erp.GpPlatformService.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Erp.GpServiceClient, Version=1.0.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Erp.GpServiceClient.1.0.0.20\lib\net40\Erp.GpServiceClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Erp.SharedLib, Version=1.0.0.81, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Erp.SharedLib.1.0.0.81\lib\net40\Erp.SharedLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GP.DistributedServices.Seedwork, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b0e95d43065b2655, processorArchitecture=MSIL">
+      <HintPath>..\packages\GP.DistributedServices.Seedwork.1.0.0\lib\net40\GP.DistributedServices.Seedwork.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GP.Infrastructure.Crosscutting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b0e95d43065b2655, processorArchitecture=MSIL">
+      <HintPath>..\packages\GP.Infrastructure.Crosscutting.1.0.0\lib\net40\GP.Infrastructure.Crosscutting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hondee.Common, Version=1.0.1.14, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hondee.Common.1.0.1.14\lib\net40\Hondee.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hondee.Common.Advance, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hondee.Common.Advance.1.0.0.4\lib\net40\Hondee.Common.Advance.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hondee.ControlLib, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hondee.ControlLib.1.0.0.10\lib\net40\Hondee.ControlLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hondee.Platform.Client, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hondee.Platform.Client.1.0.0.1\lib\net40\Hondee.Platform.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.7.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.7\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.2.1\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.10\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2.Extensions, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BootLoader\AppForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BootLoader\AppForm.designer.cs">
+      <DependentUpon>AppForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BootLoader\Config\AppConfig.cs" />
+    <Compile Include="BootLoader\EditFormEventArgs.cs" />
+    <Compile Include="BootLoader\frmSelectRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BootLoader\frmSelectRole.Designer.cs">
+      <DependentUpon>frmSelectRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BootLoader\LoginUser.cs" />
+    <Compile Include="BootLoader\Menu\BaseDataMngMenu.cs" />
+    <Compile Include="BootLoader\Menu\GSMeteringPaymentMenu.cs" />
+    <Compile Include="BootLoader\Menu\FGSMeteringPaymentMenu.cs" />
+    <Compile Include="BootLoader\Menu\XMBMeteringPaymentMenu.cs" />
+    <Compile Include="Forms\BaseInfoMng\ControlCurrencyRateMng\CurrencyGW.cs" />
+    <Compile Include="Forms\BaseInfoMng\ControlCurrencyRateMng\CurrencyTM.cs" />
+    <Compile Include="Forms\BaseInfoMng\ControlCurrencyRateMng\DollarExchangeRateForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ControlCurrencyRateMng\DollarExchangeRateForm.Designer.cs">
+      <DependentUpon>DollarExchangeRateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ControlCurrencyRateMng\DollarExchangeRateTM.cs" />
+    <Compile Include="Forms\BaseInfoMng\ControlCurrencyRateMng\FinanceExchangeRateGW.cs" />
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmAddBidMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmAddBidMng.Designer.cs">
+      <DependentUpon>frmAddBidMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmCompanyMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmCompanyMng.Designer.cs">
+      <DependentUpon>frmCompanyMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmFGSManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmFGSManager.designer.cs">
+      <DependentUpon>frmFGSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmGrpMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmGrpMng.Designer.cs">
+      <DependentUpon>frmGrpMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmGSManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmGSManager.designer.cs">
+      <DependentUpon>frmGSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmGSMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmGSMng.Designer.cs">
+      <DependentUpon>frmGSMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmXMBManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmXMBManager.designer.cs">
+      <DependentUpon>frmXMBManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmXMBMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseInfoMng\ManagerMng\frmXMBMng.Designer.cs">
+      <DependentUpon>frmXMBMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\BidTreeSelectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\BidTreeSelectControl.Designer.cs">
+      <DependentUpon>BidTreeSelectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeAttachmnt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeAttachmnt.Designer.cs">
+      <DependentUpon>frmPrjBoqChangeAttachmnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeEdit.Designer.cs">
+      <DependentUpon>frmPrjBoqChangeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoq.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoq.Designer.cs">
+      <DependentUpon>frmPrjBoq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeForm.Designer.cs">
+      <DependentUpon>frmPrjBoqChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChangeLog.Designer.cs">
+      <DependentUpon>frmPrjBoqChangeLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqList.Designer.cs">
+      <DependentUpon>frmPrjBoqList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\frmPrjBoqChange.Designer.cs">
+      <DependentUpon>frmPrjBoqChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ContractBoqMng\ViewModel\ChangeDetailViewModel.cs" />
+    <Compile Include="Forms\ContractBoqMng\ViewModel\ChangeListViewModel.cs" />
+    <Compile Include="Forms\ContractBoqMng\ViewModel\ContractBoqChanegEditViewModel.cs" />
+    <Compile Include="Forms\ContractBoqMng\ViewModel\ContractBoqViewModel.cs" />
+    <Compile Include="Forms\MeteringRptMng\MeteringPayRptRoot.cs" />
+    <Compile Include="Forms\MeteringRptMng\MeteringRptDetailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\MeteringRptDetailControl.Designer.cs">
+      <DependentUpon>MeteringRptDetailControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\MeteringRptLstControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\MeteringRptLstControl.Designer.cs">
+      <DependentUpon>MeteringRptLstControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\NumberToChinese.cs" />
+    <Compile Include="Forms\MeteringRptMng\PrintingControlControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintingControlControl.Designer.cs">
+      <DependentUpon>PrintingControlControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintPrjAmountPayRptFormOld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintPrjAmountPayRptFormOld.Designer.cs">
+      <DependentUpon>PrintPrjAmountPayRptFormOld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintPrjAmountPayRptForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintPrjAmountPayRptForm.Designer.cs">
+      <DependentUpon>PrintPrjAmountPayRptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintListPayForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintListPayForm.Designer.cs">
+      <DependentUpon>PrintListPayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintTitleForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintTitleForm.Designer.cs">
+      <DependentUpon>PrintTitleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintTotalForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrintTotalForm.Designer.cs">
+      <DependentUpon>PrintTotalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrjAmountWbsRptDetailForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\MeteringRptMng\PrjAmountWbsRptDetailForm.Designer.cs">
+      <DependentUpon>PrjAmountWbsRptDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressMeteringMng\ExcelHelper.cs" />
+    <Compile Include="Forms\ProgressMeteringMng\frmAddNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressMeteringMng\frmAddNew.Designer.cs">
+      <DependentUpon>frmAddNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressMeteringMng\PMDetailContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressMeteringMng\PMDetailContainer.Designer.cs">
+      <DependentUpon>PMDetailContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressMeteringMng\PMExport.cs" />
+    <Compile Include="Forms\ProgressMeteringMng\PMListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressMeteringMng\PMListControl.Designer.cs">
+      <DependentUpon>PMListControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectContractInfoMng\ContractInfoMng\frmXMBContractInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectContractInfoMng\ContractInfoMng\frmXMBContractInfo.Designer.cs">
+      <DependentUpon>frmXMBContractInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectContractInfoMng\ContractInfoMng\ucXMBContractInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectContractInfoMng\ContractInfoMng\ucXMBContractInfo.Designer.cs">
+      <DependentUpon>ucXMBContractInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectContractInfoMng\XMBProjectInfoMng\AddPrjManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectContractInfoMng\XMBProjectInfoMng\AddPrjManager.designer.cs">
+      <DependentUpon>AddPrjManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectInfoMng\frmPrjContractList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectInfoMng\frmPrjContractList.Designer.cs">
+      <DependentUpon>frmPrjContractList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectInfoMng\frmProjectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectInfoMng\frmProjectList.Designer.cs">
+      <DependentUpon>frmProjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WBSBoqMng\ExcelHelper.cs" />
+    <Compile Include="Forms\WBSBoqMng\frmPrjBoq.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\WBSBoqMng\frmPrjBoq.Designer.cs">
+      <DependentUpon>frmPrjBoq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WBSBoqMng\frmPrjBoqExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WBSBoqMng\frmPrjBoqExport.Designer.cs">
+      <DependentUpon>frmPrjBoqExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WBSBoqMng\frmWBSRelation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WBSBoqMng\frmWBSRelation.Designer.cs">
+      <DependentUpon>frmWBSRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WBSBoqMng\ViewModel\WBSBoqViewModel.cs" />
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BootLoader\AppForm.resx">
+      <DependentUpon>AppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BootLoader\frmSelectRole.resx">
+      <DependentUpon>frmSelectRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ControlCurrencyRateMng\DollarExchangeRateForm.resx">
+      <DependentUpon>DollarExchangeRateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmAddBidMng.resx">
+      <DependentUpon>frmAddBidMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmCompanyMng.resx">
+      <DependentUpon>frmCompanyMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmFGSManager.resx">
+      <DependentUpon>frmFGSManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmGrpMng.resx">
+      <DependentUpon>frmGrpMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmGSManager.resx">
+      <DependentUpon>frmGSManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmGSMng.resx">
+      <DependentUpon>frmGSMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmXMBManager.resx">
+      <DependentUpon>frmXMBManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseInfoMng\ManagerMng\frmXMBMng.resx">
+      <DependentUpon>frmXMBMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\BidTreeSelectControl.resx">
+      <DependentUpon>BidTreeSelectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\frmPrjBoqChangeAttachmnt.resx">
+      <DependentUpon>frmPrjBoqChangeAttachmnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\frmPrjBoqChangeEdit.resx">
+      <DependentUpon>frmPrjBoqChangeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\frmPrjBoq.resx">
+      <DependentUpon>frmPrjBoq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\frmPrjBoqChangeForm.resx">
+      <DependentUpon>frmPrjBoqChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\frmPrjBoqChangeLog.resx">
+      <DependentUpon>frmPrjBoqChangeLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\frmPrjBoqList.resx">
+      <DependentUpon>frmPrjBoqList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContractBoqMng\frmPrjBoqChange.resx">
+      <DependentUpon>frmPrjBoqChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\MeteringRptDetailControl.resx">
+      <DependentUpon>MeteringRptDetailControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\MeteringRptLstControl.resx">
+      <DependentUpon>MeteringRptLstControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\PrintingControlControl.resx">
+      <DependentUpon>PrintingControlControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\PrintPrjAmountPayRptFormOld.resx">
+      <DependentUpon>PrintPrjAmountPayRptFormOld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\PrintPrjAmountPayRptForm.resx">
+      <DependentUpon>PrintPrjAmountPayRptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\PrintListPayForm.resx">
+      <DependentUpon>PrintListPayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\PrintTitleForm.resx">
+      <DependentUpon>PrintTitleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\PrintTotalForm.resx">
+      <DependentUpon>PrintTotalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MeteringRptMng\PrjAmountWbsRptDetailForm.resx">
+      <DependentUpon>PrjAmountWbsRptDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressMeteringMng\frmAddNew.resx">
+      <DependentUpon>frmAddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressMeteringMng\PMDetailContainer.resx">
+      <DependentUpon>PMDetailContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressMeteringMng\PMListControl.resx">
+      <DependentUpon>PMListControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectContractInfoMng\ContractInfoMng\frmXMBContractInfo.resx">
+      <DependentUpon>frmXMBContractInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectContractInfoMng\ContractInfoMng\ucXMBContractInfo.resx">
+      <DependentUpon>ucXMBContractInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectContractInfoMng\XMBProjectInfoMng\AddPrjManager.resx">
+      <DependentUpon>AddPrjManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectInfoMng\frmPrjContractList.resx">
+      <DependentUpon>frmPrjContractList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectInfoMng\frmProjectList.resx">
+      <DependentUpon>frmProjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WBSBoqMng\frmPrjBoq.resx">
+      <DependentUpon>frmPrjBoq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WBSBoqMng\frmPrjBoqExport.resx">
+      <DependentUpon>frmPrjBoqExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WBSBoqMng\frmWBSRelation.resx">
+      <DependentUpon>frmWBSRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\HD.MeteringPayment.Domain.Entity.ProgressMeteringEntity.PrjAmount.datasource" />
+    <None Include="Properties\DataSources\HD.MeteringPayment.Domain.Entity.ProgressMeteringRptEntity.PrjAmountRpt.datasource" />
+    <None Include="Properties\DataSources\HD.MeteringPayment.Domain.Entity.ProgressMeteringRptEntity.PrjAmountRpt1.datasource" />
+    <None Include="Properties\DataSources\HD.MeteringPayment.Domain.Entity.ProgressMeteringRptEntity.PrjAmountWbsRpt.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.BaseInfoEntity.CmnPeriod.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.BaseInfoEntity.DeliveryInfor.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.BaseInfoEntity.projectex.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.ContractEntity.Contract.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.CovEntity.CovQrptReport.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.CovPlanEntity.CovPlan.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.PovApplyEntity.PovApply.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.PovGuaranteeEntity.PovGuaranteeLines.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.PovPlanEntity.PovPlan.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Domain.Entity.PovReceiveEntity.PovReceive.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Module.Forms.PrjBoqMng.ViewModel.ChangeDetailViewModel.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Module.Forms.PrjBoqMng.ViewModel.ProjectBoqChangeDetailEx.datasource" />
+    <None Include="Properties\DataSources\HD.SettlementCollection.Module.Forms.PrjBoqMng.ViewModel.ProjectBoqChangeEx.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="TemplateXls.xls" />
+    <EmbeddedResource Include="WbsRelationTemplateXls.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exporttoxls_16x16.png" />
+    <None Include="Resources\exporttoxls_32x32.png" />
+    <None Include="Resources\linespacing_16x161.png" />
+    <None Include="Resources\linespacing_32x321.png" />
+    <None Include="Resources\linespacing2_16x161.png" />
+    <None Include="Resources\linespacing2_32x321.png" />
+    <None Include="Resources\linespacing_16x162.png" />
+    <None Include="Resources\linespacing_32x322.png" />
+    <None Include="Resources\indentincrease_16x162.png" />
+    <None Include="Resources\indentincrease_32x322.png" />
+    <None Include="Resources\apply_16x162.png" />
+    <None Include="Resources\apply_32x322.png" />
+    <None Include="Resources\cancel_16x161.png" />
+    <None Include="Resources\cancel_32x321.png" />
+    <None Include="Resources\switchtimescalesto_16x16.png" />
+    <None Include="Resources\showworktimeonly_16x16.png" />
+    <None Include="Resources\customizemergefield_16x16.png" />
+    <None Include="Resources\newwizard_16x16.png" />
+    <None Include="Resources\withtextwrapping_bottomcenter_16x16.png" />
+    <None Include="Resources\exporttoxlsx_16x16.png" />
+    <None Include="Resources\exporttoxlsx_32x32.png" />
+    <None Include="Resources\reset_16x16.png" />
+    <None Include="Resources\reset_32x32.png" />
+    <None Include="Resources\save_16x161.png" />
+    <None Include="Resources\save_32x321.png" />
+    <None Include="Resources\cube_16x16.png" />
+    <None Include="Resources\cube_32x32.png" />
+    <None Include="Resources\previous_32x32.png" />
+    <None Include="Resources\previous_16x16.png" />
+    <None Include="Resources\next_32x32.png" />
+    <None Include="Resources\next_16x16.png" />
+    <None Include="Resources\up_32x32.png" />
+    <None Include="Resources\up_16x16.png" />
+    <None Include="Resources\sortdesc_32x32.png" />
+    <None Include="Resources\sortdesc_16x16.png" />
+    <None Include="Resources\apply_32x321.png" />
+    <None Include="Resources\apply_16x161.png" />
+    <None Include="Resources\cancel_32x32.png" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\deleteitem_32x322.png" />
+    <None Include="Resources\deleteitem_16x162.png" />
+    <None Include="Resources\additem_32x325.png" />
+    <None Include="Resources\additem_16x165.png" />
+    <None Include="Resources\additem_32x324.png" />
+    <None Include="Resources\additem_16x164.png" />
+    <None Include="Resources\indentdecrease_32x321.png" />
+    <None Include="Resources\indentdecrease_16x161.png" />
+    <None Include="Resources\additem_32x323.png" />
+    <None Include="Resources\additem_16x163.png" />
+    <None Include="Resources\indentincrease_32x321.png" />
+    <None Include="Resources\indentincrease_16x161.png" />
+    <None Include="Resources\exportfile_32x32.png" />
+    <None Include="Resources\exportfile_16x16.png" />
+    <None Include="Resources\edit_32x321.png" />
+    <None Include="Resources\edit_16x161.png" />
+    <None Include="Resources\refresh_32x323.png" />
+    <None Include="Resources\refresh_16x163.png" />
+    <None Include="Resources\deleteitem_32x321.png" />
+    <None Include="Resources\deleteitem_16x161.png" />
+    <None Include="Resources\open_32x323.png" />
+    <None Include="Resources\open_16x164.png" />
+    <None Include="Resources\additem_32x322.png" />
+    <None Include="Resources\additem_16x162.png" />
+    <None Include="Resources\refresh_32x322.png" />
+    <None Include="Resources\refresh_16x162.png" />
+    <None Include="Resources\linespacing_32x32.png" />
+    <None Include="Resources\linespacing_16x16.png" />
+    <None Include="Resources\linespacing2_32x32.png" />
+    <None Include="Resources\linespacing2_16x16.png" />
+    <None Include="Resources\apply_32x32.png" />
+    <None Include="Resources\apply_16x16.png" />
+    <None Include="Resources\deleteitem_32x32.png" />
+    <None Include="Resources\deleteitem_16x16.png" />
+    <None Include="Resources\save_32x32.png" />
+    <None Include="Resources\save_16x16.png" />
+    <None Include="Resources\additem_32x321.png" />
+    <None Include="Resources\additem_16x161.png" />
+    <None Include="Resources\additem_32x32.png" />
+    <None Include="Resources\additem_16x16.png" />
+    <None Include="Resources\edit_32x32.png" />
+    <None Include="Resources\edit_16x16.png" />
+    <None Include="Resources\indentdecrease_32x32.png" />
+    <None Include="Resources\indentdecrease_16x16.png" />
+    <None Include="Resources\indentincrease_32x32.png" />
+    <None Include="Resources\indentincrease_16x16.png" />
+    <None Include="Resources\refresh_32x321.png" />
+    <None Include="Resources\refresh_16x161.png" />
+    <None Include="Resources\open_32x322.png" />
+    <None Include="Resources\open_16x163.png" />
+    <None Include="Resources\open_16x162.png" />
+    <None Include="Resources\open_32x321.png" />
+    <None Include="Resources\open_16x161.png" />
+    <None Include="Resources\refresh_32x32.png" />
+    <None Include="Resources\refresh_16x16.png" />
+    <None Include="Resources\open_32x32.png" />
+    <None Include="Resources\open_16x16.png" />
+    <None Include="Resources\add_32x32.png" />
+    <None Include="Resources\add_16x16.png" />
+    <None Include="Resources\合同入口.png" />
+    <None Include="Resources\合同.png" />
+    <None Include="Resources\产值入库图标.png" />
+    <None Include="Resources\xmb.png" />
+    <None Include="Resources\tool.png" />
+    <None Include="Resources\title.png" />
+    <None Include="Resources\sum.png" />
+    <None Include="Resources\Report.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\parameter.png" />
+    <None Include="Resources\operation.png" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\MList.png" />
+    <None Include="Resources\min.png" />
+    <None Include="Resources\max.png" />
+    <None Include="Resources\List32.png" />
+    <None Include="Resources\list_1.png" />
+    <None Include="Resources\List.png" />
+    <None Include="Resources\ju.png" />
+    <None Include="Resources\Import32.png" />
+    <None Include="Resources\Import.png" />
+    <None Include="Resources\folder2.png" />
+    <None Include="Resources\folder1.png" />
+    <None Include="Resources\FileEdit.png" />
+    <None Include="Resources\fgs.png" />
+    <None Include="Resources\enable.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\disenable.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\database.png" />
+    <None Include="Resources\config_1.png" />
+    <None Include="Resources\Config.png" />
+    <None Include="Resources\commit.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\Checked.png" />
+    <None Include="Resources\bussiness-card1.png" />
+    <None Include="Resources\bussiness-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HD.MeteringPayment.Domain\HD.MeteringPayment.Domain.csproj">
+      <Project>{e9fad082-f4b6-4433-a1d6-ce8d43661598}</Project>
+      <Name>HD.MeteringPayment.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
